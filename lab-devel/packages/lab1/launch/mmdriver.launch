@@ -1,5 +1,5 @@
 <launch>
-  <arg name="veh" default="$(env VEHICLE_NAME)"/>
+  <arg name="veh" default="$(env casagoesdb04 )"/>
 
   <!-- Start with an existing detector stack so the launcher has a valid target. -->
   <include file="$(find cmp_ld)/launch/cmp_ld.launch">
