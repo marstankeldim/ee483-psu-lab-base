@@ -1,8 +1,13 @@
 <launch>
-  <arg name="veh" default="$(env casagoesdb04 )"/>
+  <arg name="veh" default="$(env VEHICLE_NAME)"/>
+  <arg name="vel_left" default="0.25"/>
+  <arg name="vel_right" default="0.25"/>
+  <arg name="rate" default="10"/>
 
-  <!-- Start with an existing detector stack so the launcher has a valid target. -->
-  <include file="$(find cmp_ld)/launch/cmp_ld.launch">
-    <arg name="veh" value="$(arg veh)"/>
-  </include>
+  <node pkg="lab1" type="mmdriver.py" name="driver_node" output="screen">
+    <param name="veh" value="$(arg veh)"/>
+    <param name="vel_left" value="$(arg vel_left)"/>
+    <param name="vel_right" value="$(arg vel_right)"/>
+    <param name="rate" value="$(arg rate)"/>
+  </node>
 </launch>
