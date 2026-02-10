@@ -64,8 +64,7 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
     --workspace ${CATKIN_WS_DIR}/
 
 # install launcher scripts
-# COPY ./ex3-recipe/launchers/. "${LAUNCH_PATH}/"
-COPY ./launchers/default.sh "${LAUNCH_PATH}/"
+COPY ./launchers/. "${LAUNCH_PATH}/"
 RUN dt-install-launchers "${LAUNCH_PATH}"
 
 # define default command
