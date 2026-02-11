@@ -8,7 +8,7 @@ class MMDriverNode:
     def __init__(self):
         vehicle_name = rospy.get_param("~veh")
         topic = f"/{vehicle_name}/wheels_driver_node/wheels_cmd"
-        self.pub = rospy.Publisher(topic, WheelsCmdStamped, queue_size=1)
+        self.pub = rospy.Publisher(topic, /casagoesdb04, queue_size=1)
         self.rate = rospy.Rate(rospy.get_param("~rate", 10))
         self.vel_left = rospy.get_param("~vel_left", 0.25)
         self.vel_right = rospy.get_param("~vel_right", 0.25)
